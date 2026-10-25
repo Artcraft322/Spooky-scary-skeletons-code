@@ -1,0 +1,277 @@
+[gd_scene format=4 uid="uid://c7727kd330bfx"]
+
+[ext_resource type="Texture2D" uid="uid://bkdk73r48d6mi" path="res://spookgrass.png" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://dhnq7k8fvbpv4" path="res://game.gd" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bwqm45j7qk34e" path="res://player.tscn" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://beyo6vakmymet" path="res://tree.png" id="4_7jktm"]
+[ext_resource type="FontFile" uid="uid://cmqsfeichr7a0" path="res://bloodrops-font/BloodropspersonaluseBold-mL0g2.otf" id="4_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://bkqfhf8gp8ukd" path="res://Tombstone.png" id="6_ryrav"]
+[ext_resource type="Texture2D" uid="uid://3r87gchynvcd" path="res://skeletonhappy.png" id="7_eow3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky6y1"]
+size = Vector2(1150, 647)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
+texture = ExtResource("1_80nbo")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_ky6y1"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_e2o6t")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjttf"]
+size = Vector2(119, 736)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epmtf"]
+size = Vector2(3559, 151)
+
+[sub_resource type="FontFile" id="FontFile_a223i"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ux8yg"]
+size = Vector2(159, 305)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4oah"]
+size = Vector2(141, 196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjerq"]
+size = Vector2(86, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1usqj"]
+size = Vector2(85, 196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53gap"]
+size = Vector2(87, 198)
+
+[node name="Game" type="Node2D" unique_id=1019220129]
+script = ExtResource("1_feb5d")
+
+[node name="camera" type="CharacterBody2D" parent="." unique_id=249792902]
+position = Vector2(-180, -223)
+scale = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 2
+
+[node name="cameracollision" type="CollisionShape2D" parent="camera" unique_id=1273538898]
+position = Vector2(0, 0.6666641)
+scale = Vector2(0.33333334, 0.33333334)
+shape = SubResource("RectangleShape2D_ky6y1")
+
+[node name="Camera2D" type="Camera2D" parent="camera/cameracollision" unique_id=661941177]
+position = Vector2(0.99998474, -1.9999695)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1112035211]
+texture_filter = 1
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAD6/wAAAAABAAAAAAD7/wAAAAABAAAAAAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAD5/wAAAAABAAAAAAD4/wAAAAABAAAAAAD3/wAAAAABAAAAAAD2/wAAAAABAAAAAAD1/wAAAAABAAAAAAD0/wAAAAABAAAAAADz////AAACAAEAAADz//7/AAACAAEAAADz//3/AAACAAEAAADz//z/AAACAAEAAADz//v/AAACAAEAAADz//r/AAACAAEAAADz//n/AAACAAEAAADz//j/AAACAAEAAADz/wAAAAACAAIAAADy//j/AAABAAEAAADy//n/AAABAAEAAADy//r/AAABAAEAAADy//v/AAABAAEAAADy//z/AAABAAEAAADy//3/AAABAAEAAADy//7/AAABAAEAAADy////AAABAAEAAADy/wAAAAABAAEAAADy/wEAAAABAAEAAADz/wEAAAABAAEAAAD0/wEAAAABAAEAAAD1/wEAAAABAAEAAAD2/wEAAAABAAEAAAD3/wEAAAABAAEAAAD4/wEAAAABAAEAAAD5/wEAAAABAAEAAAD6/wEAAAABAAEAAAD7/wEAAAABAAEAAAD8/wEAAAABAAEAAAD9/wEAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAAAAAEAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAFAAEAAAABAAEAAAAGAAEAAAABAAEAAAAGAAIAAAABAAEAAAAFAAIAAAABAAEAAAAEAAIAAAABAAEAAAADAAIAAAABAAEAAAACAAIAAAABAAEAAAABAAIAAAABAAEAAAAAAAIAAAABAAEAAAD//wIAAAABAAEAAAD+/wIAAAABAAEAAAD9/wIAAAABAAEAAAD8/wIAAAABAAEAAAD7/wIAAAABAAEAAAD6/wIAAAABAAEAAAD5/wIAAAABAAEAAAD4/wIAAAABAAEAAAD3/wIAAAABAAEAAAD2/wIAAAABAAEAAAD1/wIAAAABAAEAAAD0/wIAAAABAAEAAADz/wIAAAABAAEAAADy/wIAAAABAAEAAADz//f/AAACAAEAAADz//b/AAACAAEAAADz//X/AAACAAEAAADz//T/AAACAAEAAADz//P/AAACAAEAAADz//L/AAACAAEAAADz//H/AAACAAEAAADz//D/AAACAAEAAADz/+//AAACAAEAAADz/+7/AAACAAEAAADy//f/AAABAAEAAADy//b/AAABAAEAAADy//X/AAABAAEAAADy//T/AAABAAEAAADy//P/AAABAAEAAADy//L/AAABAAEAAADy//H/AAABAAEAAADy//D/AAABAAEAAADy/+//AAABAAEAAADy/+7/AAABAAEAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAAAAAIAAAALAP//AAAAAAEAAAALAP7/AAAAAAAAAAAMAP7/AAABAAAAAAANAP7/AAABAAAAAAAOAP7/AAABAAAAAAAPAP7/AAABAAAAAAAQAP7/AAACAAAAAAAQAP//AAACAAIAAAAOAAAAAAABAAEAAAANAAAAAAABAAEAAAAMAAAAAAABAAEAAAAMAP//AAABAAEAAAANAP//AAABAAEAAAAOAP//AAABAAEAAAAPAP//AAABAAEAAAAPAAAAAAABAAEAAAARAP//AAABAAAAAAASAP//AAABAAAAAAATAP//AAABAAAAAAAHAAEAAAABAAEAAAAHAAIAAAABAAEAAAAIAAIAAAABAAEAAAAJAAIAAAABAAEAAAAKAAIAAAABAAEAAAAKAAEAAAABAAEAAAAJAAEAAAABAAEAAAAIAAEAAAABAAEAAAALAAIAAAABAAEAAAALAAEAAAABAAEAAAAMAAIAAAABAAEAAAAMAAEAAAABAAEAAAANAAEAAAABAAEAAAAOAAEAAAABAAEAAAAOAAIAAAABAAEAAAAPAAIAAAABAAEAAAANAAIAAAABAAEAAAAQAAEAAAABAAEAAAAQAAIAAAABAAEAAAAPAAEAAAABAAEAAAAQAAAAAAABAAEAAAARAAAAAAABAAEAAAARAAEAAAABAAEAAAASAAEAAAABAAEAAAASAAAAAAABAAEAAAATAAAAAAABAAEAAAATAAEAAAABAAEAAAASAAIAAAABAAEAAAARAAIAAAABAAEAAAATAAIAAAABAAEAAAAUAP//AAABAAAAAAAVAP//AAABAAAAAAAWAP//AAABAAAAAAAXAP//AAABAAAAAAAYAP//AAABAAAAAAAaAP//AAABAAAAAAAZAP//AAABAAAAAAAbAP//AAAAAAIAAAAbAP7/AAAAAAAAAAAcAP7/AAABAAAAAAAdAP7/AAABAAAAAAAfAP3/AAABAAAAAAAgAP3/AAABAAAAAAAhAP3/AAABAAAAAAAiAP3/AAABAAAAAAAjAP3/AAABAAAAAAAeAP7/AAAAAAIAAAAeAP3/AAAAAAAAAAAnAP3/AAABAAAAAAAmAP3/AAABAAAAAAAlAP3/AAABAAAAAAAkAP3/AAABAAAAAAAoAP3/AAABAAAAAAApAP3/AAACAAAAAAApAP7/AAACAAIAAAAqAP7/AAABAAAAAAArAP7/AAACAAAAAAAsAP//AAABAAAAAAArAP//AAACAAIAAAAtAP//AAABAAAAAAAuAP//AAABAAAAAAAvAP//AAABAAAAAAAzAP//AAABAAAAAAAyAP//AAABAAAAAAAxAP//AAABAAAAAAAwAP//AAABAAAAAAAUAAIAAAABAAEAAAAVAAIAAAABAAEAAAAWAAIAAAABAAEAAAAXAAIAAAABAAEAAAAYAAIAAAABAAEAAAAZAAIAAAABAAEAAAAaAAIAAAABAAEAAAAbAAIAAAABAAEAAAAcAAIAAAABAAEAAAAdAAIAAAABAAEAAAAeAAIAAAABAAEAAAAfAAIAAAABAAEAAAAgAAIAAAABAAEAAAAhAAIAAAABAAEAAAAiAAIAAAABAAEAAAAjAAIAAAABAAEAAAAkAAIAAAABAAEAAAAlAAIAAAABAAEAAAAmAAIAAAABAAEAAAAnAAIAAAABAAEAAAAoAAIAAAABAAEAAAApAAIAAAABAAEAAAAqAAIAAAABAAEAAAArAAIAAAABAAEAAAAsAAIAAAABAAEAAAAtAAIAAAABAAEAAAAuAAIAAAABAAEAAAAvAAIAAAABAAEAAAAwAAIAAAABAAEAAAAxAAIAAAABAAEAAAAxAAEAAAABAAEAAAAyAAEAAAABAAEAAAAyAAIAAAABAAEAAAAzAAIAAAABAAEAAAAzAAEAAAABAAEAAAAzAAAAAAABAAEAAAAhAAEAAAABAAEAAAAhAAAAAAABAAEAAAAhAP//AAABAAEAAAAhAP7/AAABAAEAAAAgAP7/AAABAAEAAAAfAP7/AAABAAEAAAAfAP//AAABAAEAAAAeAP//AAABAAEAAAAdAP//AAABAAEAAAAcAP//AAABAAEAAAAcAAAAAAABAAEAAAAbAAAAAAABAAEAAAAaAAAAAAABAAEAAAAZAAAAAAABAAEAAAAYAAAAAAABAAEAAAAXAAAAAAABAAEAAAAWAAAAAAABAAEAAAAVAAAAAAABAAEAAAAUAAAAAAABAAEAAAAUAAEAAAABAAEAAAAVAAEAAAABAAEAAAAWAAEAAAABAAEAAAAXAAEAAAABAAEAAAAYAAEAAAABAAEAAAAZAAEAAAABAAEAAAAaAAEAAAABAAEAAAAbAAEAAAABAAEAAAAcAAEAAAABAAEAAAAdAAEAAAABAAEAAAAdAAAAAAABAAEAAAAeAAAAAAABAAEAAAAeAAEAAAABAAEAAAAfAAEAAAABAAEAAAAfAAAAAAABAAEAAAAgAAAAAAABAAEAAAAgAP//AAABAAEAAAAgAAEAAAABAAEAAAAiAP7/AAABAAEAAAAiAP//AAABAAEAAAAiAAAAAAABAAEAAAAiAAEAAAABAAEAAAAjAAEAAAABAAEAAAAjAAAAAAABAAEAAAAjAP//AAABAAEAAAAjAP7/AAABAAEAAAAkAP7/AAABAAEAAAAkAP//AAABAAEAAAAkAAAAAAABAAEAAAAkAAEAAAABAAEAAAAlAAEAAAABAAEAAAAlAAAAAAABAAEAAAAlAP//AAABAAEAAAAlAP7/AAABAAEAAAAmAP7/AAABAAEAAAAmAP//AAABAAEAAAAmAAAAAAABAAEAAAAmAAEAAAABAAEAAAAnAAEAAAABAAEAAAAnAAAAAAABAAEAAAAnAP//AAABAAEAAAAnAP7/AAABAAEAAAAoAP7/AAABAAEAAAAoAP//AAABAAEAAAAoAAAAAAABAAEAAAAoAAEAAAABAAEAAAApAAEAAAABAAEAAAApAAAAAAABAAEAAAApAP//AAABAAEAAAAqAP//AAABAAEAAAAqAAAAAAABAAEAAAAqAAEAAAABAAEAAAArAAEAAAABAAEAAAArAAAAAAABAAEAAAAsAAAAAAABAAEAAAAsAAEAAAABAAEAAAAtAAEAAAABAAEAAAAtAAAAAAABAAEAAAAuAAAAAAABAAEAAAAuAAEAAAABAAEAAAAvAAEAAAABAAEAAAAvAAAAAAABAAEAAAAwAAAAAAABAAEAAAAwAAEAAAABAAEAAAAxAAAAAAABAAEAAAAyAAAAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_ky6y1")
+
+[node name="player" parent="." unique_id=982590539 groups=["player"] instance=ExtResource("2_e2o6t")]
+z_index = 2
+position = Vector2(-180, -223)
+scale = Vector2(3, 3)
+
+[node name="look text" type="Label" parent="player" unique_id=1157794502]
+z_index = 2
+offset_left = -41.333332
+offset_top = -29.666666
+offset_right = 67.66667
+offset_bottom = -6.666666
+text = "E: look behind"
+
+[node name="camera_borders" type="StaticBody2D" parent="." unique_id=948562377]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_borders" unique_id=1694425922]
+position = Vector2(-710, -264)
+shape = SubResource("RectangleShape2D_sjttf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="camera_borders" unique_id=1574234396]
+position = Vector2(1020.5, 182.5)
+shape = SubResource("RectangleShape2D_epmtf")
+
+[node name="initial text" type="Label" parent="." unique_id=210056735]
+offset_left = -288.0
+offset_top = -366.0
+offset_right = -49.0
+offset_bottom = -321.0
+theme_override_fonts/font = SubResource("FontFile_a223i")
+theme_override_font_sizes/font_size = 32
+text = "Find the"
+
+[node name="Label2" type="Label" parent="initial text" unique_id=1839658051]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 6.0
+offset_right = 365.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("4_fc0e3")
+theme_override_font_sizes/font_size = 32
+text = "SPOOKY SCARY SKELETONS"
+
+[node name="tree1" type="Area2D" parent="." unique_id=773402160 groups=["hidingspot"]]
+position = Vector2(684, -268)
+
+[node name="Sprite2D" type="Sprite2D" parent="tree1" unique_id=717001435]
+texture_filter = 1
+position = Vector2(64, -96)
+scale = Vector2(12, 12)
+texture = ExtResource("4_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree1" unique_id=2094520198]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_ux8yg")
+
+[node name="tree2" type="Area2D" parent="." unique_id=595595256 groups=["hidingspot"]]
+position = Vector2(1603, -273)
+
+[node name="Sprite2D" type="Sprite2D" parent="tree2" unique_id=1628204107]
+texture_filter = 1
+position = Vector2(70.00012, -134.00003)
+scale = Vector2(12, 12)
+texture = ExtResource("4_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree2" unique_id=464318308]
+position = Vector2(5, -27)
+shape = SubResource("RectangleShape2D_ux8yg")
+
+[node name="tree3" type="Area2D" parent="." unique_id=905445642 groups=["hidingspot"]]
+position = Vector2(2362, -190)
+
+[node name="Sprite2D" type="Sprite2D" parent="tree3" unique_id=99692795]
+texture_filter = 1
+position = Vector2(58, -127)
+scale = Vector2(12, 12)
+texture = ExtResource("4_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree3" unique_id=1297706232]
+position = Vector2(-2, -12)
+shape = SubResource("RectangleShape2D_ux8yg")
+
+[node name="Tombstone" type="Area2D" parent="." unique_id=1795309591 groups=["hidingspot"]]
+position = Vector2(-483, -103)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tombstone" unique_id=1082642255]
+position = Vector2(11, 4)
+shape = SubResource("RectangleShape2D_r4oah")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tombstone" unique_id=702281799]
+texture_filter = 1
+position = Vector2(3, 4)
+scale = Vector2(6, 6)
+texture = ExtResource("6_ryrav")
+
+[node name="Tombstone2" type="Area2D" parent="." unique_id=535990130 groups=["hidingspot"]]
+position = Vector2(1153, -146)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tombstone2" unique_id=227053487]
+position = Vector2(7, -8)
+shape = SubResource("RectangleShape2D_r4oah")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tombstone2" unique_id=38422827]
+texture_filter = 1
+position = Vector2(2, -1)
+scale = Vector2(6, 6)
+texture = ExtResource("6_ryrav")
+
+[node name="Tombstone3" type="Area2D" parent="." unique_id=77499418 groups=["hidingspot"]]
+position = Vector2(1903, -260)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tombstone3" unique_id=1984665960]
+position = Vector2(3, 10)
+shape = SubResource("RectangleShape2D_r4oah")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tombstone3" unique_id=1307138595]
+texture_filter = 1
+position = Vector2(0, 16)
+scale = Vector2(6, 6)
+texture = ExtResource("6_ryrav")
+
+[node name="spooky skeletons" type="Area2D" parent="." unique_id=1353546523 groups=["skeleton"]]
+position = Vector2(-2271, -652)
+
+[node name="Sprite2D" type="Sprite2D" parent="spooky skeletons" unique_id=2067471663]
+texture_filter = 1
+position = Vector2(1, 3)
+scale = Vector2(4, 4)
+texture = ExtResource("7_eow3j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spooky skeletons" unique_id=136670816]
+position = Vector2(-7, -2)
+shape = SubResource("RectangleShape2D_kjerq")
+
+[node name="spooky skeletons2" type="Area2D" parent="." unique_id=1169188199 groups=["skeleton"]]
+position = Vector2(-1980, -318)
+
+[node name="Sprite2D" type="Sprite2D" parent="spooky skeletons2" unique_id=485638503]
+texture_filter = 1
+position = Vector2(4, 10)
+scale = Vector2(4, 4)
+texture = ExtResource("7_eow3j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spooky skeletons2" unique_id=440067309]
+position = Vector2(-3.5, 4)
+shape = SubResource("RectangleShape2D_1usqj")
+
+[node name="spooky skeletons3" type="Area2D" parent="." unique_id=1292559049 groups=["skeleton"]]
+position = Vector2(-3613, -465)
+
+[node name="Sprite2D" type="Sprite2D" parent="spooky skeletons3" unique_id=1447083532]
+texture_filter = 1
+position = Vector2(2, -1)
+scale = Vector2(4, 4)
+texture = ExtResource("7_eow3j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spooky skeletons3" unique_id=591735891]
+position = Vector2(-5.5, -6)
+shape = SubResource("RectangleShape2D_53gap")
+
+[connection signal="body_shape_entered" from="tree1" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="tree1" to="." method="_on_area_2d_body_shape_exited"]
+[connection signal="body_shape_entered" from="tree2" to="." method="_on_tree_2_body_shape_entered"]
+[connection signal="body_shape_exited" from="tree2" to="." method="_on_tree_2_body_shape_exited"]
+[connection signal="body_shape_entered" from="tree3" to="." method="_on_tree_3_body_shape_entered"]
+[connection signal="body_shape_exited" from="tree3" to="." method="_on_tree_3_body_shape_exited"]
+[connection signal="body_shape_entered" from="Tombstone" to="." method="_on_tombstone_body_shape_entered"]
+[connection signal="body_shape_exited" from="Tombstone" to="." method="_on_tombstone_body_shape_exited"]
+[connection signal="body_shape_entered" from="Tombstone2" to="." method="_on_tombstone_2_body_shape_entered"]
+[connection signal="body_shape_exited" from="Tombstone2" to="." method="_on_tombstone_2_body_shape_exited"]
+[connection signal="body_shape_entered" from="Tombstone3" to="." method="_on_tombstone_3_body_shape_entered"]
+[connection signal="body_shape_exited" from="Tombstone3" to="." method="_on_tombstone_3_body_shape_exited"]
+[connection signal="body_shape_entered" from="spooky skeletons" to="." method="_on_spooky_skeletons_body_shape_entered"]
