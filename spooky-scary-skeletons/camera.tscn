@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ccg1wgcn06naj"]
+
+[ext_resource type="Texture2D" uid="uid://bhac648yrnup1" path="res://skeletonjumpscre.png" id="1_u5kg4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky6y1"]
+size = Vector2(1150, 647)
+
+[node name="camera" type="CharacterBody2D" unique_id=1890470983]
+process_mode = 3
+position = Vector2(-180, -223)
+scale = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 2
+
+[node name="cameracollision" type="CollisionShape2D" parent="." unique_id=160017239]
+position = Vector2(0, 0.6666641)
+scale = Vector2(0.33333334, 0.33333334)
+shape = SubResource("RectangleShape2D_ky6y1")
+
+[node name="Camera2D" type="Camera2D" parent="cameracollision" unique_id=377527741]
+position = Vector2(0.99998474, -1.9999695)
+
+[node name="Jumpscare" type="Sprite2D" parent="." unique_id=2078360879]
+z_index = 14
+position = Vector2(1.9999695, -0.45832968)
+scale = Vector2(0.8460001, 0.46316668)
+texture = ExtResource("1_u5kg4")
